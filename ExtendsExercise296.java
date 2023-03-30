@@ -11,7 +11,7 @@ public class ExtendsExercise296 {
 public static void main(String[] args) {
 	PC pc = new PC(" soni");//给子类1 品牌赋值
 	NotePad notePad = new NotePad(" 黑色 ");//给子类2颜色赋值
-	System.out.println(notePad.fo()+pc.in());
+	System.out.println(notePad.info()+pc.info());
 	
 }
 }
@@ -52,7 +52,7 @@ class PC extends Computer{//子类1
 		//super("i7","8gb","1TB");//给父类构造器赋值
 		this.burando = burando;//保存属性品牌
 	}	
-	public String in() {
+	public String info() {
 		//方法返回子类1品牌
 //		return  info()+"burando="+burando;//super("i7","8gb","1TB");
 		return  "burando="+burando;
@@ -78,9 +78,10 @@ class NotePad extends Computer{
 		//创建构造器颜色
 		this.color=color;
 	}
-	public String fo() {
+	public String info() {
 		//返回子类2  输出父类的info 和子类2的颜色
-		return info()+" color=" +color;
+		return super.info()+" color=" +color;
+		//当子类中 有和父类方法  属性或者成员重名时 使用关键词super访问
 		
 	}
 }
