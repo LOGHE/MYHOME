@@ -18,7 +18,7 @@ public class Student354 extends Person354{
 		System.out.println("学生的信息：");
 		super.say();
 		System.out.println("学号："+getStu_id());
-		System.out.println(student());
+		student();
 		System.out.println(pay());
 	}
 //重写父类玩的方法
@@ -28,14 +28,19 @@ public class Student354 extends Person354{
 		return getName()+"学生爱踢足球";
 	}
 	//特有方法
-	public String student() {
-		return "我承诺我会好好学习";
+	public void student() {
+		System.out.println( getName()+"我承诺我会好好学习");
 	}
 	public Student354(String name, int age, char gender, String stu_id) {
 		super(name, age, gender);
 		this.stu_id = stu_id;
 	}
-
+	
+	//打印属性 不调用方法或者特殊方法用toString
+	@Override
+	public String toString() {
+		return "Student354 [stu_id=" + stu_id + "]" +super.toString();
+	}
 	public String getStu_id() {
 		return stu_id;
 	}

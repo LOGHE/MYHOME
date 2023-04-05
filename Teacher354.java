@@ -16,7 +16,7 @@ public class Teacher354 extends Person354{
 		System.out.println("老师的信息：");
 		super.say();
 		System.out.println("工龄："+getWork_age());
-		System.out.println(teacher());
+		teacher();
 		System.out.println(pay());
 	}
 	//重写父类玩的方法
@@ -26,8 +26,13 @@ public class Teacher354 extends Person354{
 		return getName()+"老师爱下象棋";
 	}
 	//特有属性方法
-	public String teacher() {
-		return "我承诺，我会认真教学";
+	public void teacher() {
+		System.out.println(getName()+"我承诺，我会认真教学"); 
+	}
+	
+	@Override
+	public String toString() {
+		return "Teacher354 [work_age=" + work_age + "]"+super.toString();
 	}
 	public Teacher354(String name, int age, char gender, double work_age) {
 		super(name, age, gender);

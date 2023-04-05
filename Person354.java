@@ -19,6 +19,11 @@ public class Person354 {
 	public String pay() {
 		return"";
 	}
+	
+	@Override
+	public String toString() {
+		return "Person354 [name=" + name + ", age=" + age + ", gender=" + gender + "]";
+	}
 	public Person354(String name, int age, char gender) {
 		super();
 		this.name = name;
