@@ -26,8 +26,8 @@ public class HomeWork495 {
 			throw new RuntimeException("输入有误");
 		}
 		//判断是否为英文字母或者空格
-		if (!((isAllLetters(name) == false  ||  name8(name) == false))) {
-			throw new RuntimeException("请输入正确的英文名字");
+		if (!((isAllLetters(name)  ||  name8(name)))) {
+			throw new RuntimeException("请输入正确的英文名字或格式");
 		}
 		
 		char[] c1 = name.toCharArray();
