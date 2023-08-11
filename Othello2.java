@@ -9,7 +9,7 @@ package kadai10;
  */
 public class Othello2 {
 	public static void main(String[] args) {
-		Banmen b1 = new Banmen();
+		Banmen1 b1 = new Banmen1();
 		b1.play();
 	}
 }
