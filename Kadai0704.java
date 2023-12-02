@@ -28,16 +28,26 @@ public class Kadai0704 {
 		
 		for (int i = 0; i < seisekis01.length; i++) {
 			for(int j = 0; j < seisekis01.length - i -1; j++) {
+				Seiseki01 seiseki001 = seisekis01[j];
 				if (seisekis01[j].getScore() > seisekis01[j + 1].getScore()) {
-					Seiseki01 seiseki001 = seisekis01[j];
 					seisekis01[j] = seisekis01[j + 1];
 					seisekis01[j+1] = seiseki001;
+				}else if (seisekis01[j].getScore() == seisekis01[j + 1].getScore()) {
+					//文字列中での整数型を取り出して、引数として整数型に変換します.numとnum2 に代入します
+					//seisekis01[j].getNumber().length()-4 はcut start
+					//seisekis01[j].getNumber().length() は cut　end
+					int num = Integer.parseInt(seisekis01[j].getNumber().substring(seisekis01[j].getNumber().length()-4, seisekis01[j].getNumber().length()));
+					int num2 =Integer.parseInt(seisekis01[j + 1].getNumber().substring(seisekis01[j + 1].getNumber().length()-4, seisekis01[j + 1].getNumber().length()));
+					if (num > num2) {
+						seisekis01[j] = seisekis01[j + 1];
+						seisekis01[j+1] = seiseki001;
+					}
 				}
 			}
 		}
 		System.out.println();
 		for (int i = 0; i < seisekis01.length; i++) {
-			System.out.println(seisekis01[i].getNumber() + " " + seisekis01[i].getName() + "\t" + seisekis01[i].getScore());
+			System.out.println(seisekis01[i].getNumber() + "  " + seisekis01[i].getName() + "  " + seisekis01[i].getScore());
 		}
 	}
 }
