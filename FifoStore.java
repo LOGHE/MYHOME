@@ -11,16 +11,18 @@ public class FifoStore extends Store {
 
 	@Override
 	public Object get() {
-		if (size() == 0) {
-			return null;
+		Object obj;
+		if (size() >= 1) {
+			index --;
+			obj = data[0];
+			for (int i = 0 ; i < size() ; i++) {
+				data[i] = data[i + 1];
 		}
-		for (int i = index ; i < data.length ; i++) {
-			 if (super.data[i] != null) {
-				 super.index = i  ;
-				 return data[i];
-			 }
+		}else {
+			obj = null;
+			index = 0;//说明index= -1 了要让他等于0防止下标出错
 		}
-		return null;
+		return obj;
 		
 	}
 	

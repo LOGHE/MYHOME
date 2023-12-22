@@ -11,10 +11,14 @@ public class LifoStore extends Store {
 
 	@Override
 	public Object get() {
-		if (size() == 0) {
-			return null;
+		Object obj;
+		if (size() != 0) {
+			obj = data[size() - 1];//いつでもlastのデータを取れます
+			index --;
+		}else {
+			obj = null;
 		}
-		return data[index];
+		return obj;
 	}
 	
 }
